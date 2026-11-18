@@ -1,0 +1,50 @@
+! Title: Meow: No YouTube shorts
+! Expires: 12 hours
+! Homepage: https://github.com/ecoson16/Meow-filterlist
+! License: https://github.com/ecoson16/Meow-filterlist/blob/main/LICENSE
+! GitHub issues: https://github.com/ecoson16/meow/issues
+! GitHub pull requests: https://github.com/ecoson16/meow/pulls
+! Description: Block YouTube Shorts
+
+! ---------- Desktop ----------
+! Shorts watch pages
+www.youtube.com##ytd-shorts
+
+! Left sidebar: Shorts navigation entry
+www.youtube.com##.yt-simple-endpoint[title="Shorts"]
+
+! Home feed: Shorts sections and shelves
+www.youtube.com##ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2)
+www.youtube.com##ytd-item-section-renderer:has(ytd-rich-shelf-renderer[is-shorts])
+
+! Subscriptions feed: Shorts shelf
+www.youtube.com##ytd-rich-shelf-renderer[is-shorts]
+
+! Shorts shelves shown in video descriptions and search results
+www.youtube.com##ytd-reel-shelf-renderer
+www.youtube.com##grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2)
+
+! Video entries that link directly to a Short
+www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
+
+! Channel navigation: Shorts tab
+www.youtube.com##yt-tab-shape[tab-title="Shorts"]
+
+! Home page topic bar: Shorts chip (removes its wrapper to avoid leaving a gap)
+www.youtube.com##.ytChipBarViewModelChipWrapper:has(button[aria-label="Shorts"])
+
+! ---------- Mobile ----------
+! Home feed: Shorts sections
+m.youtube.com##ytm-rich-section-renderer:has(ytm-shorts-lockup-view-model)
+
+! Bottom navigation bar: Shorts button
+m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
+
+! Shorts pages and their carousel
+m.youtube.com##shorts-carousel
+
+! Search results: Shorts shelves
+m.youtube.com##grid-shelf-view-model:has(ytm-shorts-lockup-view-model)
+
+! Video descriptions: Shorts shelf
+m.youtube.com##ytm-reel-shelf-renderer
